@@ -32,7 +32,7 @@
 from hsk_client import HskClient
 
 # 初始化客户端（传入您的 API Key）
-client = HskClient(api_key="hsk_sk_7f8a9b2c4e1d603a")
+client = HskClient(api_key="YOUR_API_KEY")
 
 # 1. 快捷分词与 HSK 等级标注
 res = client.segment("我爱学习汉语，清华大学很好。")
@@ -52,7 +52,7 @@ for token in data["tokens"]:
 
 ```bash
 curl -X POST http://47.100.50.47:8765/api/segment \
-     -H "X-API-Key: hsk_sk_7f8a9b2c4e1d603a" \
+     -H "X-API-Key: YOUR_API_KEY" \
      -H "Content-Type: application/json" \
      -d '{"text": "我爱学习汉语。"}'
 ```
@@ -65,7 +65,7 @@ curl -X POST http://47.100.50.47:8765/api/segment \
 fetch('http://47.100.50.47:8765/api/segment', {
   method: 'POST',
   headers: {
-    'X-API-Key': 'hsk_sk_7f8a9b2c4e1d603a',
+    'X-API-Key': 'YOUR_API_KEY',
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({ text: '我爱学习汉语。' })
@@ -89,7 +89,7 @@ fetch('http://47.100.50.47:8765/api/segment', {
 
 ## 🛡️ 安全与频控规范
 
-- **身份鉴权**：请求 Header 需带上 `X-API-Key: 您的密钥`，或在 URL query 中加上 `api_key=您的密钥`。
+- **身份鉴权**：正式 API 请求需在 Header 中携带 `X-API-Key: 您的密钥`。请勿将密钥放入 URL 或前端源码。
 - **请求限流**：针对单 IP 限制每分钟最多 60 次请求，超过返回 `HTTP 429`。
 - **文本上限**：单次分析请求的文本长度上限为 **10,000 字符**。
 

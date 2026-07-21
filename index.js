@@ -3,7 +3,10 @@
  */
 
 class HskClient {
-  constructor(apiKey = 'hsk_sk_7f8a9b2c4e1d603a', baseUrl = 'http://47.100.50.47:8765') {
+  constructor(apiKey, baseUrl = 'http://47.100.50.47:8765') {
+    if (!apiKey || !apiKey.trim()) {
+      throw new Error('apiKey must not be empty');
+    }
     this.apiKey = apiKey;
     this.baseUrl = baseUrl.replace(/\/$/, '');
   }

@@ -22,7 +22,7 @@ This repository provides Python and JavaScript SDKs to interact with the cloud-h
 from hsk_client import HskClient
 
 # Initialize client with your API Key
-client = HskClient(api_key="hsk_sk_7f8a9b2c4e1d603a")
+client = HskClient(api_key="YOUR_API_KEY")
 
 # Quick text segmentation with HSK levels
 res = client.segment("我爱学习汉语，清华大学很好。")
@@ -41,7 +41,7 @@ for token in data["tokens"]:
 
 ```bash
 curl -X POST http://47.100.50.47:8765/api/segment \
-     -H "X-API-Key: hsk_sk_7f8a9b2c4e1d603a" \
+     -H "X-API-Key: YOUR_API_KEY" \
      -H "Content-Type: application/json" \
      -d '{"text": "我爱学习汉语。"}'
 ```
@@ -54,7 +54,7 @@ curl -X POST http://47.100.50.47:8765/api/segment \
 fetch('http://47.100.50.47:8765/api/segment', {
   method: 'POST',
   headers: {
-    'X-API-Key': 'hsk_sk_7f8a9b2c4e1d603a',
+    'X-API-Key': 'YOUR_API_KEY',
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({ text: '我爱学习汉语。' })
@@ -77,7 +77,7 @@ fetch('http://47.100.50.47:8765/api/segment', {
 
 ## 🛡️ Security & Protection Limits
 
-- **Auth**: Requires `X-API-Key` HTTP Header or `api_key` query parameter.
+- **Auth**: Protected API endpoints require an `X-API-Key` HTTP header. Never place keys in URLs or client-side source code.
 - **Rate Limit**: 60 requests per minute per IP address.
 - **Max Length**: 10,000 characters per request.
 

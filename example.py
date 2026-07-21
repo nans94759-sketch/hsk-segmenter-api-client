@@ -1,6 +1,6 @@
 from hsk_client import HskClient
 
-client = HskClient(api_key="hsk_sk_7f8a9b2c4e1d603a")
+client = HskClient(api_key="YOUR_API_KEY")
 
 # 1. Health check
 print("Health Check:", client.health_check())

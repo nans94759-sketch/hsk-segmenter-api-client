@@ -5,7 +5,9 @@ import requests
 from typing import Dict, Any
 
 class HskClient:
-    def __init__(self, api_key: str = "hsk_sk_7f8a9b2c4e1d603a", base_url: str = "http://47.100.50.47:8765") -> None:
+    def __init__(self, api_key: str, base_url: str = "http://47.100.50.47:8765") -> None:
+        if not api_key.strip():
+            raise ValueError("api_key must not be empty")
         self.api_key = api_key
         self.base_url = base_url.rstrip("/")
         self.headers = {
