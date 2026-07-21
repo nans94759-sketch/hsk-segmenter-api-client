@@ -1,0 +1,92 @@
+# HSK 现代汉语分词与等级标注 API 客户端 (SDK)
+
+[![API Portal](https://img.shields.io/badge/API%20Portal-%E5%9C%A8%E7%BA%BF%E8%B0%83%E8%AF%95-brightgreen)](http://47.100.50.47:8765/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[English Version](README.md) | **简体中文**
+
+本仓库为 **HSK 现代汉语分词与等级标注云端 API 服务** 的官方轻量级客户端 SDK 与接入文档。
+
+支持在 Python、JavaScript、Node.js 及 cURL 中快速对中文文本进行分词，并自动标注各个词汇对应的 HSK 1-7 级等级、汉语拼音及词性。
+
+- **在线 API 调试控制台 & 体验**: [http://47.100.50.47:8765/](http://47.100.50.47:8765/)
+- **API 基地址**: `http://47.100.50.47:8765`
+
+---
+
+## 🚀 快速开始
+
+### 1. Python 调用示例
+
+使用本仓库提供的 `hsk_client.py` 模块：
+
+```python
+from hsk_client import HskClient
+
+# 初始化客户端（传入您的 API Key）
+client = HskClient(api_key="hsk_sk_7f8a9b2c4e1d603a")
+
+# 1. 快捷分词与 HSK 等级标注
+res = client.segment("我爱学习汉语，清华大学很好。")
+print(res["result"])
+# 输出结果: 我[1]爱[1]学习[1]汉语[1]，清华大学[未收录]很好[1/2/4/5]。
+
+# 2. 结构化详细词汇分析（含拼音与词性）
+data = client.analyze("今天天气很不错。")
+for token in data["tokens"]:
+    if token["kind"] == "word":
+        print(f"{token['text']} | 等级: {token.get('display_level')} | 拼音: {token.get('pinyin')}")
+```
+
+---
+
+### 2. cURL 命令行调用
+
+```bash
+curl -X POST http://47.100.50.47:8765/api/segment \
+     -H "X-API-Key: hsk_sk_7f8a9b2c4e1d603a" \
+     -H "Content-Type: application/json" \
+     -d '{"text": "我爱学习汉语。"}'
+```
+
+---
+
+### 3. JavaScript / Fetch (Web 前端 & 微信小程序)
+
+```javascript
+fetch('http://47.100.50.47:8765/api/segment', {
+  method: 'POST',
+  headers: {
+    'X-API-Key': 'hsk_sk_7f8a9b2c4e1d603a',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ text: '我爱学习汉语。' })
+})
+.then(res => res.json())
+.then(data => console.log(data.result));
+// 输出: 我[1]爱[1]学习[1]汉语[1]。
+```
+
+---
+
+## 📡 API 接口规范说明
+
+| 端点 (Endpoint) | HTTP 方法 | 鉴权要求 | 接口说明 |
+| :--- | :--- | :--- | :--- |
+| `/api/health` | `GET` | 否 (公开) | 服务健康检查接口 |
+| `/api/segment` | `POST` | 是 (`X-API-Key`) | 快捷分词并返回带等级标记的文本（格式：`词语[等级]`） |
+| `/api/analyze` | `POST` | 是 (`X-API-Key`) | 返回完整结构化 JSON（含分词、HSK 等级、拼音、词性） |
+
+---
+
+## 🛡️ 安全与频控规范
+
+- **身份鉴权**：请求 Header 需带上 `X-API-Key: 您的密钥`，或在 URL query 中加上 `api_key=您的密钥`。
+- **请求限流**：针对单 IP 限制每分钟最多 60 次请求，超过返回 `HTTP 429`。
+- **文本上限**：单次分析请求的文本长度上限为 **10,000 字符**。
+
+---
+
+## 📄 开源协议
+
+[MIT License](LICENSE)

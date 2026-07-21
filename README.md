@@ -3,6 +3,8 @@
 [![API Portal](https://img.shields.io/badge/API_Portal-Live-brightgreen)](http://47.100.50.47:8765/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+**English** | [简体中文](README_CN.md)
+
 Official lightweight API Client and SDK for the **HSK Chinese Word Segmentation & Level Annotation API**.
 
 This repository provides Python and JavaScript SDKs to interact with the cloud-hosted HSK API service.
