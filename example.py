@@ -6,7 +6,7 @@ client = HskClient(api_key="YOUR_API_KEY")
 print("Health Check:", client.health_check())
 
 # 2. Quick Segmentation
-res = client.segment("我爱学习汉语，清华大学很好。")
+res = client.segment("周末，我和朋友参观了城市博物馆。")
 print("Annotated Text:", res.get("result"))
 
 # 3. Detailed Analysis

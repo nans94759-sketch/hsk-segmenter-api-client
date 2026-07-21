@@ -18,7 +18,7 @@
 
 [![HSK 课文分词与等级高亮网页效果](docs/images/web-visualization-demo.jpg)](http://47.100.50.47:8765/)
 
-> 示例中，“我、爱、学习、汉语”等词被自动切分并标注等级；页面同时支持查看拼音和导出带等级的 TXT 文本。
+> 示例覆盖 HSK 1–6 级及 7–9 级词汇，包括“参观、人工智能、倡议、共识”等不同难度的词；页面同时支持查看拼音和导出带等级的 TXT 文本。
 
 ---
 
@@ -35,9 +35,9 @@ from hsk_client import HskClient
 client = HskClient(api_key="YOUR_API_KEY")
 
 # 1. 快捷分词与 HSK 等级标注
-res = client.segment("我爱学习汉语，清华大学很好。")
+res = client.segment("周末，我和朋友参观了城市博物馆。")
 print(res["result"])
-# 输出结果: 我[1]爱[1]学习[1]汉语[1]，清华大学[未收录]很好[1/2/4/5]。
+# 输出结果: 周末[3]，我[1]和[1/7-9]朋友[1]参观[4]了[1]城市[3]博物馆[5]。
 
 # 2. 结构化详细词汇分析（含拼音与词性）
 data = client.analyze("今天天气很不错。")
@@ -54,7 +54,7 @@ for token in data["tokens"]:
 curl -X POST http://47.100.50.47:8765/api/segment \
      -H "X-API-Key: YOUR_API_KEY" \
      -H "Content-Type: application/json" \
-     -d '{"text": "我爱学习汉语。"}'
+     -d '{"text": "周末，我和朋友参观了城市博物馆。"}'
 ```
 
 ---
@@ -68,11 +68,11 @@ fetch('http://47.100.50.47:8765/api/segment', {
     'X-API-Key': 'YOUR_API_KEY',
     'Content-Type': 'application/json'
   },
-  body: JSON.stringify({ text: '我爱学习汉语。' })
+  body: JSON.stringify({ text: '周末，我和朋友参观了城市博物馆。' })
 })
 .then(res => res.json())
 .then(data => console.log(data.result));
-// 输出: 我[1]爱[1]学习[1]汉语[1]。
+// 输出: 周末[3]，我[1]和[1/7-9]朋友[1]参观[4]了[1]城市[3]博物馆[5]。
 ```
 
 ---

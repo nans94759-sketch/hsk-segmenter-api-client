@@ -25,9 +25,9 @@ from hsk_client import HskClient
 client = HskClient(api_key="YOUR_API_KEY")
 
 # Quick text segmentation with HSK levels
-res = client.segment("我爱学习汉语，清华大学很好。")
+res = client.segment("周末，我和朋友参观了城市博物馆。")
 print(res["result"])
-# Output: 我[1]爱[1]学习[1]汉语[1]，清华大学[未收录]很好[1/2/4/5]。
+# Output: 周末[3]，我[1]和[1/7-9]朋友[1]参观[4]了[1]城市[3]博物馆[5]。
 
 # Detailed tokenization & metadata
 data = client.analyze("今天天气很不错。")
@@ -43,7 +43,7 @@ for token in data["tokens"]:
 curl -X POST http://47.100.50.47:8765/api/segment \
      -H "X-API-Key: YOUR_API_KEY" \
      -H "Content-Type: application/json" \
-     -d '{"text": "我爱学习汉语。"}'
+     -d '{"text": "周末，我和朋友参观了城市博物馆。"}'
 ```
 
 ---
@@ -57,7 +57,7 @@ fetch('http://47.100.50.47:8765/api/segment', {
     'X-API-Key': 'YOUR_API_KEY',
     'Content-Type': 'application/json'
   },
-  body: JSON.stringify({ text: '我爱学习汉语。' })
+  body: JSON.stringify({ text: '周末，我和朋友参观了城市博物馆。' })
 })
 .then(res => res.json())
 .then(data => console.log(data.result));
