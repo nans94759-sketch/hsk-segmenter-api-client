@@ -1,4 +1,4 @@
-# HSK 分词工具 | Chinese Word Segmentation & HSK Level Annotation
+# HSK 分词分级工具 | HSK 3.0 Chinese Word Segmentation & Level Annotation
 
 [![API Portal](https://img.shields.io/badge/API_Portal-Live-brightgreen)](http://47.100.50.47:8765/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -7,7 +7,7 @@
 
 Official lightweight API Client and SDK for the **HSK Chinese Word Segmentation & Level Annotation API**.
 
-This repository provides a practical **HSK 分词工具 (HSK Chinese segmentation tool)** and Python/JavaScript SDKs for Chinese learners, teachers, content creators, and NLP developers.
+This repository provides a practical **HSK 分词分级工具 (HSK Chinese segmentation and level-grading tool)** with Python/JavaScript SDKs for Chinese learners, teachers, content creators, and NLP developers. It combines an **HSK 分词工具 (HSK Chinese segmentation tool)** with automatic vocabulary grading under the HSK 3.0 framework—also commonly searched as **HSK3.0** or **HSK30**—from Level 1 through Levels 7–9.
 
 - **Live API Playground & Docs**: [http://47.100.50.47:8765/](http://47.100.50.47:8765/)
 - **API Base URL**: `http://47.100.50.47:8765`
@@ -15,10 +15,12 @@ This repository provides a practical **HSK 分词工具 (HSK Chinese segmentatio
 ## 🔎 What This Tool Does
 
 - **Chinese word segmentation (中文分词 / 现代汉语分词)** for sentences, passages, and learning materials.
-- **HSK vocabulary level annotation** covering HSK Levels 1–6 and advanced Levels 7–9.
+- **HSK 3.0 vocabulary level annotation** covering HSK Levels 1–6 and advanced Levels 7–9, following the level structure in the latest [*Syllabus for the Chinese Proficiency Test*](https://www.chinesetest.cn/syllabus) (published November 2025; effective July 2026).
 - **Pinyin and part-of-speech tagging** for structured Chinese text analysis.
 - **Chinese NLP REST API** with Python SDK, JavaScript SDK, Node.js, and cURL examples.
-- Built on **Jieba** and suitable for Mandarin learning, HSK teaching, graded reading, and vocabulary analysis.
+- Built on [**Jieba**](https://github.com/fxsjy/jieba), an open-source Chinese segmentation library released under the MIT License, and suitable for Mandarin learning, HSK teaching, graded reading, and vocabulary analysis.
+
+> The syllabus effective date describes the published HSK 3.0 framework. For actual examination rollout and dates, refer to the latest official Chinese Test Service announcements.
 
 ## ✨ Live Demo
 
