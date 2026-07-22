@@ -1,16 +1,24 @@
-# HSK 现代汉语分词与等级标注 API 客户端 (SDK)
+# HSK 分词工具｜现代汉语分词与等级标注 API / SDK
 
 [![API Portal](https://img.shields.io/badge/API%20Portal-%E5%9C%A8%E7%BA%BF%E8%B0%83%E8%AF%95-brightgreen)](http://47.100.50.47:8765/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [English Version](README.md) | **简体中文**
 
-本仓库为 **HSK 现代汉语分词与等级标注云端 API 服务** 的官方轻量级客户端 SDK 与接入文档。
+本仓库提供一套面向中文学习者、教师、内容创作者和 NLP 开发者的 **HSK 分词工具**，也是 **HSK 现代汉语分词与等级标注云端 API 服务** 的官方轻量级客户端 SDK 与接入文档。
 
-支持在 Python、JavaScript、Node.js 及 cURL 中快速对中文文本进行分词，并自动标注各个词汇对应的 HSK 1-7 级等级、汉语拼音及词性。
+支持在 Python、JavaScript、Node.js 及 cURL 中快速对中文文本进行分词，并自动标注各个词汇对应的 HSK 1–9 级等级、汉语拼音及词性。
 
 - **在线 API 调试控制台 & 体验**: [http://47.100.50.47:8765/](http://47.100.50.47:8765/)
 - **API 基地址**: `http://47.100.50.47:8765`
+
+## 🔎 主要功能
+
+- **中文分词 / 现代汉语分词**：处理句子、课文、阅读材料和中文语料。
+- **HSK 词汇等级标注**：覆盖 HSK 1–6 级及 7–9 级高级词汇。
+- **拼音标注与词性分析**：输出拼音、词性和结构化 Token 数据。
+- **中文 NLP REST API**：提供 Python SDK、JavaScript SDK、Node.js 和 cURL 示例。
+- 基于 **Jieba**，适用于 HSK 学习、中文教学、分级阅读和词汇难度分析。
 
 ## ✨ 在线体验效果
 

@@ -1,4 +1,4 @@
-# HSK Chinese Segmenter & Level Annotation API Client
+# HSK 分词工具 | Chinese Word Segmentation & HSK Level Annotation
 
 [![API Portal](https://img.shields.io/badge/API_Portal-Live-brightgreen)](http://47.100.50.47:8765/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -7,10 +7,18 @@
 
 Official lightweight API Client and SDK for the **HSK Chinese Word Segmentation & Level Annotation API**.
 
-This repository provides Python and JavaScript SDKs to interact with the cloud-hosted HSK API service.
+This repository provides a practical **HSK 分词工具 (HSK Chinese segmentation tool)** and Python/JavaScript SDKs for Chinese learners, teachers, content creators, and NLP developers.
 
 - **Live API Playground & Docs**: [http://47.100.50.47:8765/](http://47.100.50.47:8765/)
 - **API Base URL**: `http://47.100.50.47:8765`
+
+## 🔎 What This Tool Does
+
+- **Chinese word segmentation (中文分词 / 现代汉语分词)** for sentences, passages, and learning materials.
+- **HSK vocabulary level annotation** covering HSK Levels 1–6 and advanced Levels 7–9.
+- **Pinyin and part-of-speech tagging** for structured Chinese text analysis.
+- **Chinese NLP REST API** with Python SDK, JavaScript SDK, Node.js, and cURL examples.
+- Built on **Jieba** and suitable for Mandarin learning, HSK teaching, graded reading, and vocabulary analysis.
 
 ## ✨ Live Demo
 
