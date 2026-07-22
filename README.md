@@ -12,6 +12,14 @@ This repository provides Python and JavaScript SDKs to interact with the cloud-h
 - **Live API Playground & Docs**: [http://47.100.50.47:8765/](http://47.100.50.47:8765/)
 - **API Base URL**: `http://47.100.50.47:8765`
 
+## ✨ Live Demo
+
+No code is required: paste a Chinese passage to see word segmentation and color-coded HSK levels. Click the image below to open the live demo.
+
+[![HSK passage segmentation and level highlighting demo](docs/images/web-visualization-demo.jpg)](http://47.100.50.47:8765/)
+
+> The example covers HSK Levels 1–6 and 7–9, including vocabulary of varying difficulty such as `参观`, `人工智能`, `倡议`, and `共识`. The page also supports Pinyin tooltips and TXT export with level annotations.
+
 ---
 
 ## 🚀 Quick Start
